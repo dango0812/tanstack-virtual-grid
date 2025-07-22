@@ -6,7 +6,7 @@ export default function Layout({
     return (
         <html>
             <head>
-
+                <link href="//spoqa.github.io/spoqa-han-sans/css/SpoqaHanSansNeo.css" rel="stylesheet" type="text/css" />
             </head>
             <body>
                 {children}
