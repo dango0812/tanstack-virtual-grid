@@ -1,0 +1,24 @@
+@use "variables";
+
+@mixin flex-row($align: stretch, $justify: flex-start, $gap: 0) {
+    display: flex;
+    flex-direction: row;
+    justify-content: $justify;
+    align-items: $align;
+    gap: $gap;
+}
+
+@mixin flex-column($align: stretch, $justify: flex-start, $gap: 0) {
+    display: flex;
+    flex-direction: column;
+    justify-content: $justify;
+    align-items: $align;
+    gap: $gap;
+}
+
+@mixin container($maxWidth: $breakpoint-full) {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    max-width: $maxWidth;
+}

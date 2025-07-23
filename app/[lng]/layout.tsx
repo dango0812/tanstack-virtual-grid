@@ -1,4 +1,4 @@
-import "@styles/globals.scss";
+import "@styles/main.scss";
 
 // i18next
 import { dir } from "i18next";
