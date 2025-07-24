@@ -22,3 +22,21 @@
     width: 100%;
     max-width: $maxWidth;
 }
+
+@mixin responsive($min: null, $max: null) {
+    @if $min != null and $max != null {
+        @media (min-width: $min) and (max-width: $max) {
+            @content;
+        }
+    } @else if $min != null {
+        @media (min-width: $min) {
+            @content;
+        }
+    } @else if $max != null {
+        @media (max-width: $max) {
+            @content;
+        }
+    } @else {
+        @warn "No valid breakpoint provided for responsive mixin.";
+    }
+}
