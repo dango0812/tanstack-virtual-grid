@@ -1,0 +1,20 @@
+@use "@styles/abstracts/_mixins.scss" as *;
+@use "@styles/abstracts/_variables.scss" as *;
+
+.languageSelect {
+    width: 36px;
+    height: 36px;
+    color: $black;
+    text-decoration: none;
+
+    &:hover {
+        border-radius: $border-radius-full;
+        background-color: $greyOpacity200;
+    }
+
+    span {
+        @include flex-row($align: center, $justify: center, $gap: 0);
+        width: 36px;
+        height: 36px;
+    }
+}

@@ -10,7 +10,7 @@ export default async function MainPage({ params }: MainPageProps) {
 
     return (
         <>
-            <Header />
+            <Header lng={lng} />
             <main>
                 language {lng}
             </main>

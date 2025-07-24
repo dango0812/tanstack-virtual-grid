@@ -4,10 +4,18 @@ import Link from "next/link";
 import styles from "@components/Layout/Header/Header.module.scss";
 // icons
 import IconLogo from "@icons/IconLogo";
+// components
+import LanguageSelect from "@components/Layout/LanguageSelect";
 // libs
 import { paths } from "@lib/paths";
 
-export default function Header() {
+interface HeaderProps {
+    lng: string;
+}
+
+export default function Header({
+    lng
+}: HeaderProps) {
     return (
         <header className={styles.header}>
             <nav className={styles.navbar}>
@@ -18,6 +26,8 @@ export default function Header() {
                             TanStack Virtual Grid
                         </span>
                     </Link>
+
+                    <LanguageSelect lng={lng}/>
                 </div>
             </nav>
         </header>
