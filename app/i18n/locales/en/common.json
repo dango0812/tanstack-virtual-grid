@@ -1,3 +1,7 @@
 {
-    
+    "hero_section": {
+        "title": "Fast, Flexible UX",
+        "title2": "Virtual Grid",
+        "description": "This project provides code examples of how to implement a virtualized grid using @tanstack/virtual and how to implement virtualization while maintaining the aspect ratio of grid items."
+    }
 }
