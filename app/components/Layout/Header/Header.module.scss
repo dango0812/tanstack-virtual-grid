@@ -1,0 +1,42 @@
+@use "@styles/abstracts/_mixins.scss" as *;
+@use "@styles/abstracts/_variables.scss" as *;
+
+.header {
+    width: 100%;
+    height: 60px;
+    border-bottom: 1px solid $grey200;
+}
+
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: inherit;
+    height: inherit
+}
+
+.container {
+    @include container($maxWidth: $breakpoint-xl);
+    @include flex-row($align: center, $justify: space-between, $gap: 0);
+    width: inherit;
+    height: inherit;
+    margin: 0 auto;
+    @include responsive(null, $breakpoint-xl) {
+        padding: 0 20px;
+    }
+}
+
+.link {
+    @include flex-row($align: center, $justify: center, $gap: 8px);
+    text-decoration: none;
+    padding: 2px 4px;
+    svg {
+        width: 24px;
+        height: 24px;
+        color: $blue500;
+    }
+    span {
+        color: $black;
+        font-weight: 700;
+    }
+}

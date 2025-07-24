@@ -8,8 +8,10 @@
     "paths": {
       "@/*": ["app/*"],
       "@i18n/*": ["app/i18n/*"],
+      "@lib/*": ["app/lib/*"],
+      "@styles/*": ["app/styles/*"],
       "@components/*": ["app/components/*"],
-      "@styles/*": ["app/styles/*"]
+      "@icons/*": ["app/components/Icons/*"],
     },
 
     /* Type Checking */
