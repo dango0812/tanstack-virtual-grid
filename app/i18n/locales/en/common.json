@@ -3,5 +3,23 @@
         "title": "Fast, Flexible UX",
         "title2": "Virtual Grid",
         "description": "This project provides code examples of how to implement a virtualized grid using @tanstack/virtual and how to implement virtualization while maintaining the aspect ratio of grid items."
+    },
+    "hero_tech_stack_section": {
+        "title": "Framework Agnostic & Feature Rich",
+        "description": "TanStack Virtual is a powerful virtualization solution that combines both efficient performance and flexibility, unlike traditional react-window and react-virtualized. It efficiently handles large scrollable lists of elements at 60 FPS, virtualizes only the visible DOM nodes, while maintaining 100% control over markup and styling. We chose TanStack Virtual because it's also very lightweight and is currently the best library available.",
+        "tech_stacks": {
+            "design": {
+                "title": "Designed for zero design",
+                "description": "Headless Virtualization means you're always in control of your markup, styles and components. Go design and implement the most beautiful UI you can dream up and let us take care of the hard parts."
+            },
+            "performance": {
+                "title": "Big Power, Small Package",
+                "description": "Don't be fooled by the small bundle size. TanStack Virtual uses every byte to deliver powerful performance. After all, 60FPS is table stakes these days and we refuse to sacrifice anything for that 🧈-y smooth UX."
+            },
+            "maximum_composability": {
+                "title": "Maximum Composability",
+                "description": "With a single function/hook, you'll get limitless virtualization for vertical, horizontal, and grid-style layouts. The API is tiny (literally 1 function), but its composability is not."
+            }
+        }
     }
 }
