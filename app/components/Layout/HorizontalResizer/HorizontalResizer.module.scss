@@ -1,7 +1,9 @@
-@use "@styles/abstracts/_mixins.scss" as *;
+@use "@styles/abstracts/_variables.scss" as *;
 
 .wrapper {
     position: relative;
+    min-width: 335px;
+    max-width: 100%;
     overflow: hidden;
     padding: 16px;
     border-radius: $border-radius-xl;

@@ -7,26 +7,19 @@ import styles from "@components/Layout/HorizontalResizer/HorizontalResizer.modul
 // components
 import IconThreeDots from "@icons/IconThreeDots";
 
-const MIN_WIDTH = 375;
-const MAX_WIDTH = 1024;
-
 interface HorizontalResizerProps {
     children: React.ReactNode;
-    minWidth?: number;
-    maxWidth?: number;
     height: number;
 }
 
 export default function HorizontalResizer({
     children,
-    minWidth = MIN_WIDTH,
-    maxWidth = MAX_WIDTH,
     height,
 }: HorizontalResizerProps) {
     const parentRef = useRef<HTMLDivElement>(null);
     const isDraggingRef = useRef<boolean>(false);
 
-    const [width, setWidth] = useState<number>(0);
+    const [width, setWidth] = useState<number>(375);
 
     const handleMouseMove = (event: MouseEvent) => {
         if (!isDraggingRef.current) {
@@ -66,9 +59,7 @@ export default function HorizontalResizer({
             className={styles.wrapper}
             style={{
                 width,
-                height,
-                minWidth,
-                maxWidth
+                height
             }}
         >
             <div
