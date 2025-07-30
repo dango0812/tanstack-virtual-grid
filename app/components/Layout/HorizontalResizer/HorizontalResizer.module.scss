@@ -1,0 +1,29 @@
+@use "@styles/abstracts/_mixins.scss" as *;
+
+.wrapper {
+    position: relative;
+    overflow: hidden;
+    padding: 16px;
+    border-radius: $border-radius-xl;
+    border: 1px solid $greyOpacity200;
+    box-shadow: 0 4px 24px $greyOpacity300;
+
+    .contentBox {
+        width: 100%;
+        height: 100%;
+        border: 1px solid $greyOpacity100;
+        background-color: $greyOpacity100;
+        border-radius: $border-radius-xl;
+        overflow: hidden;
+        user-select: none;
+    }
+
+    .rightPannel {
+        position: absolute;
+        top: 50%;
+        right: -6px;
+        transform: translateY(-50%) rotate(90deg);
+        color: $black;
+        cursor: ew-resize;
+    }
+}
