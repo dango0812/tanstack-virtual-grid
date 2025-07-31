@@ -9,6 +9,7 @@
       "@/*": ["app/*"],
       "@i18n/*": ["app/i18n/*"],
       "@lib/*": ["app/lib/*"],
+      "@hooks/*": ["app/hooks/*"],
       "@styles/*": ["app/styles/*"],
       "@components/*": ["app/components/*"],
       "@icons/*": ["app/components/Icons/*"],
