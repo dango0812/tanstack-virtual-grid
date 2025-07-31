@@ -6,6 +6,7 @@ import styles from "@components/Home/Home.module.scss";
 import { serverSideTranslation } from "@i18n/server";
 // icons
 import IconGithub from "@icons/IconGithub";
+import IconTanstack from "@icons/IconTanstack";
 import IconBentoGrid from "@icons/IconBentoGrid";
 // paths
 import { domains } from "@lib/paths";
@@ -15,7 +16,8 @@ interface HomeHeroSectionProps {
 }
 
 const linkConfig = [
-    { href: domains.github, label: "Github", icon: <IconGithub /> }
+    { href: domains.github, label: "Github", icon: <IconGithub /> },
+    { href: domains.tanstack, label: "TanStack", icon: <IconTanstack /> }
 ];
 
 export default async function HomeHeroSection({
@@ -38,20 +40,22 @@ export default async function HomeHeroSection({
                         {t("hero_section.description")}
                     </p>
                     
-                    {linkConfig.map(({ href, label, icon }) => (
-                        <Link
-                            key={label}
-                            href={href}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                        >
-                            {icon}
+                    <div className={styles.linkList}>
+                        {linkConfig.map(({ href, label, icon }) => (
+                            <Link
+                                key={label}
+                                href={href}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                            >
+                                {icon}
 
-                            <span>
-                                {label}
-                            </span>
-                        </Link>
-                    ))}
+                                <span>
+                                    {label}
+                                </span>
+                            </Link>
+                        ))}
+                    </div>
                 </div>
 
                 <IconBentoGrid

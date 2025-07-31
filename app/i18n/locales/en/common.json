@@ -25,5 +25,9 @@
                 "description": "With a single function/hook, you'll get limitless virtualization for vertical, horizontal, and grid-style layouts. The API is tiny (literally 1 function), but its composability is not."
             }
         }
+    },
+    "home_try_sample_section": {
+        "title": "Tanstack Virtual Grid Sample",
+        "description": "This output was created using TanStack Virtual. It maintains a 16:9 aspect ratio on screens wider than 640px and switches to a 1:1 aspect ratio on screens 640px or narrower."
     }
 }

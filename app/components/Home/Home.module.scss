@@ -43,25 +43,28 @@
             }
         }
 
-        a {
-            @include flex-row(center, center, 8px);
-            width: max-content;
-            padding: 12px 10px;
-            text-decoration: none;
-            color: $black;
-            background-color: $grey100;
-            border-radius: $border-radius-xl;
-            &:hover {
-                transition: background-color 0.3s ease-in-out;
-                background-color: $grey200;
-            }
-            svg {
-                width: 20px;
-                height: 20px;
-            }
-            span {
-                font-size: $font-size-sm;
-                font-weight: $font-weight-normal;
+        .linkList {
+            @include flex-row(null, null, 10px);
+            a {
+                @include flex-row(center, center, 8px);
+                width: max-content;
+                padding: 12px 10px;
+                text-decoration: none;
+                color: $black;
+                background-color: $grey100;
+                border-radius: $border-radius-xl;
+                &:hover {
+                    transition: background-color 0.3s ease-in-out;
+                    background-color: $grey200;
+                }
+                svg {
+                    width: 20px;
+                    height: 20px;
+                }
+                span {
+                    font-size: $font-size-sm;
+                    font-weight: $font-weight-normal;
+                }
             }
         }
     }
