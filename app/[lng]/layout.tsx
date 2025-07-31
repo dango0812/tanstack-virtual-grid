@@ -4,6 +4,8 @@ import "@styles/main.scss";
 import { dir } from "i18next";
 import { languages } from "@i18n/settings";
 import { serverSideTranslation } from "@i18n/server";
+// components
+import Header from "@components/Layout/Header";
 
 export async function generateStaticParams() {
     return languages.map((lng) => ({ lng }))
@@ -38,6 +40,7 @@ export default async function RootLayout({ children, params }: RootLayoutProps) 
             </head>
 
             <body>
+                <Header lng={lng} />
                 {children}
             </body>
         </html>

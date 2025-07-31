@@ -10,6 +10,7 @@
     &:hover {
         border-radius: $border-radius-full;
         background-color: $greyOpacity200;
+        transition: background-color 0.3s ease-in-out;
     }
 
     span {

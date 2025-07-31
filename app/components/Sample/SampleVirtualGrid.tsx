@@ -131,7 +131,7 @@ export default function VirtualizedResponsiveGrid() {
                 className={style.virtualWrapper}
                 style={{
                     width: `${columnVirtualizer.getTotalSize() - gap.x}px`,
-                    height: `${rowVirtualizer.getTotalSize()}px`
+                    height: `${rowVirtualizer.getTotalSize() - gap.y}px`
                 }}
             >
                 {rowVirtualizer.getVirtualItems().map((virtualRow) =>
