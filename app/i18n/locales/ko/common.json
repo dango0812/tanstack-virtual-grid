@@ -1,10 +1,14 @@
 {
+    "metadata": {
+        "title": "TanStack Virtual Grid",
+        "description": "이 프로젝트에서는 @tanstack/virtual을 사용하여 가상화된 그리드를 구현하는 방법과 그리드 항목의 종횡비를 유지하면서 가상화를 구현하는 방법에 대한 코드 예제를 제공합니다."
+    },
     "hero_section": {
         "title": "빠르고 유연한 UX 구축,",
         "title2": "가상화 그리드",
         "description": "이 프로젝트에서는 @tanstack/virtual을 사용하여 가상화된 그리드를 구현하는 방법과 그리드 항목의 종횡비를 유지하면서 가상화를 구현하는 방법에 대한 코드 예제를 제공합니다."
     },
-    "hero_tech_stack_section": {
+    "home_tech_stack_section": {
         "title": "다양한 기능 & 효율적인 성능",
         "description": "TanStack Virtual은 기존 react-window, react-virtualized와 다르게 효율적인 성능과 유연성을 모두 갖춘 강력한 가상화 솔루션입니다. 60FPS로 스크롤 가능한 대규모 요소 목록을 효율적으로 처리하고, 표시되는 DOM 노드만 가상화하는 동시에 마크업과 스타일을 100% 제어합니다. 또한 매우 가벼우며 현재 최고의 라이브러리로 사랑받고 있기 때문에 TanStack Virtual 를 선택했습니다.",
         "tech_stacks": {
@@ -21,5 +25,9 @@
                 "description": "단일 함수/후크(hook)로 수직, 수평, 그리드 스타일 레이아웃에 대한 무제한 가상화를 구현할 수 있습니다. API는 작지만(말 그대로 함수 하나), 구성 가능성은 뛰어납니다."
             }
         }
+    },
+    "home_try_sample_section": {
+        "title": "Tanstack Virtual Grid Sample",
+        "description": "이 샘플은 TanStack Virtual Grid의 사용법을 보여주는 예제입니다. 다양한 크기의 그리드 항목을 가상화하여 성능을 최적화하고, 종횡비를 유지하면서 그리드 레이아웃을 구현하는 방법을 배울 수 있습니다."
     }
 }

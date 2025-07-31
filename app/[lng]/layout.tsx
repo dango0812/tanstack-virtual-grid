@@ -15,10 +15,11 @@ interface GenerateMetadataProps {
 
 export async function generateMetadata({ params }: GenerateMetadataProps) {
     let { lng } = await params;
-    const { t: tMetadata } = await serverSideTranslation(lng, "metadata");
+    const { t } = await serverSideTranslation(lng);
     
     return {
-        title: tMetadata("title")
+        title: t("metadata.title"),
+        description: t("metadata.description"),
     }
 }
 
