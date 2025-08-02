@@ -12,6 +12,11 @@ interface HorizontalResizerProps {
     height: number;
 }
 
+type PointerDelta = {
+    movementX: number;
+    movementY: number;
+}
+
 export default function HorizontalResizer({
     children,
     height,
@@ -21,13 +26,44 @@ export default function HorizontalResizer({
 
     const [width, setWidth] = useState<number>(375);
 
-    const handleMouseMove = (event: MouseEvent) => {
-        if (!isDraggingRef.current) {
-            return;
-        }
+    const getPointerDelta = (() => {
+        let lastX: number | null = null;
+        let lastY: number | null = null;
 
-        document.body.style.cursor = "ew-resize";
-        setWidth((width) => width + event.movementX * 2);
+        return function (event: MouseEvent | TouchEvent): PointerDelta {
+            if (event instanceof MouseEvent) {
+                return { movementX: event.movementX, movementY: event.movementY };
+            }
+
+            if (event instanceof TouchEvent && event.touches.length > 0) {
+                const touch = event.touches[0];
+                const clientX = touch.clientX;
+                const clientY = touch.clientY;
+
+                const movementX = lastX !== null ? clientX - lastX : 0;
+                const movementY = lastY !== null ? clientY - lastY : 0;
+
+                lastX = clientX;
+                lastY = clientY;
+
+                return { movementX, movementY };
+            }
+
+            return { movementX: 0, movementY: 0 };
+        };
+    })();
+
+    const handleResize = (event: MouseEvent | TouchEvent) => {
+        const { movementX } = getPointerDelta(event);
+        setWidth((width) => width + movementX * 2);
+    };
+
+    const handleMouseMove = (event: MouseEvent) => {
+        handleResize(event);
+    };
+
+    const handleTouchMove = (event: TouchEvent) => {
+        handleResize(event);
     };
 
     const handleMouseUp = () => {
@@ -35,6 +71,13 @@ export default function HorizontalResizer({
         document.body.style.cursor = "auto";
         document.removeEventListener("mousemove", handleMouseMove);
         document.removeEventListener("mouseup", handleMouseUp);
+    };
+
+    const handleTouchEnd = () => {
+        isDraggingRef.current = false;
+        document.body.style.cursor = "auto";
+        document.removeEventListener("touchmove", handleTouchMove);
+        document.removeEventListener("touchend", handleTouchEnd);
     };
 
     const handleMouseDown = () => {
@@ -49,6 +92,19 @@ export default function HorizontalResizer({
         document.addEventListener("mousemove", handleMouseMove);
         document.addEventListener("mouseup", handleMouseUp);
     };
+
+    const handleTouchStart = () => {
+        if (!parentRef.current) {
+            return;
+        }
+
+        const { width } = parentRef.current.getBoundingClientRect();
+        setWidth(width);
+
+        isDraggingRef.current = true;
+        document.addEventListener("touchmove", handleTouchMove);
+        document.addEventListener("touchend", handleTouchEnd);
+    }
 
     // if use useEffect, the mouse move & up handlers should always remain in memory, even if the mouse is not under control.
     // also, Even if the mouse isn't used, useEffect will still run unconditionally
@@ -71,6 +127,7 @@ export default function HorizontalResizer({
             <div
                 className={styles.rightPannel}
                 onMouseDown={handleMouseDown}
+                onTouchStart={handleTouchStart}
             >
                 <IconThreeDots />
             </div>
