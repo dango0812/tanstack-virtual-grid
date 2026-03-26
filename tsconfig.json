@@ -1,55 +1,77 @@
 {
   "compilerOptions": {
+    /* Compatibility */
+    "ignoreDeprecations": "6.0",
     /* Modules */
     "baseUrl": ".",
     "module": "esnext",
     "moduleResolution": "bundler",
     "resolveJsonModule": true,
     "paths": {
-      "@/*": ["app/*"],
-      "@i18n/*": ["app/i18n/*"],
-      "@lib/*": ["app/lib/*"],
-      "@hooks/*": ["app/hooks/*"],
-      "@styles/*": ["app/styles/*"],
-      "@components/*": ["app/components/*"],
-      "@icons/*": ["app/components/Icons/*"],
+      "@/*": [
+        "app/*"
+      ],
+      "@i18n/*": [
+        "app/i18n/*"
+      ],
+      "@lib/*": [
+        "app/lib/*"
+      ],
+      "@hooks/*": [
+        "app/hooks/*"
+      ],
+      "@styles/*": [
+        "app/styles/*"
+      ],
+      "@components/*": [
+        "app/components/*"
+      ],
+      "@icons/*": [
+        "app/components/Icons/*"
+      ]
     },
-
     /* Type Checking */
     "noFallthroughCasesInSwitch": true,
     "noImplicitReturns": true,
     "noUnusedLocals": true,
     "noUnusedParameters": true,
     "strict": true,
-
     /* Language and Environment */
-    "jsx": "preserve",
+    "jsx": "react-jsx",
     "target": "esnext",
-    "lib": ["dom", "dom.iterable", "esnext"],
-     
+    "lib": [
+      "dom",
+      "dom.iterable",
+      "esnext"
+    ],
     /* Interop Constraints */
     "allowSyntheticDefaultImports": true,
     "esModuleInterop": true,
     "forceConsistentCasingInFileNames": true,
     "isolatedModules": true,
-
     /* Emit */
     "downlevelIteration": true,
     "preserveConstEnums": true,
-
     /* Completeness */
     "allowJs": true,
     "skipLibCheck": true,
     "noEmit": true,
-
     /* Editor Support */
     "incremental": true,
     "plugins": [
       {
         "name": "next"
       }
-    ],
+    ]
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
-  "exclude": ["node_modules"]
+  "include": [
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx",
+    ".next/types/**/*.ts",
+    ".next/dev/types/**/*.ts"
+  ],
+  "exclude": [
+    "node_modules"
+  ]
 }
