@@ -11,7 +11,7 @@ export const config = {
     matcher: ["/((?!api|_next/static|_next/image|assets|favicon.ico|sw.js|site.webmanifest|sitemap.xml|robots.txt).*)"]
 };
 
-export function middleware(req: NextRequest) {
+export function proxy(req: NextRequest) {
     const { pathname, search } = req.nextUrl;
 
     if (pathname.indexOf("icon") > -1 || pathname.indexOf("chrome") > -1) {
